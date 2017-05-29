@@ -22,8 +22,8 @@ void loop()
 { 
 
   lcd.clear();
-  fadeLeft("Colton Alex", " and Sophie!");
-  fadeRight("Piper Alice Sam", "Tech Club!");
+  fadeLeft("please work!");
+  fadeRight("why git no work?!!");
 }
 
 
