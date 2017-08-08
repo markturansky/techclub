@@ -126,11 +126,16 @@ void loop()
   
   if (nextStudentButton == HIGH && hasMinimumTimeElapsed()){
     lcd.clear();
-    int randomInt = getNextStudent();
-    lastClickTime = millis();
-    selectedStudentIndex = randomInt;  
-    lcd.print(classRoster[selectedStudentIndex]);
-    addStudent(selectedStudentIndex);
+    int nextstudent = getNextStudent();
+    
+    if (nextstudent > -1){
+      lastClickTime = millis();
+      selectedStudentIndex = nextstudent;  
+      lcd.print(classRoster[selectedStudentIndex]);
+      addStudent(selectedStudentIndex);
+    } else {
+      lcd.print("SHIRO IS A CLONE");
+    }
   }
   
   if (resetStudents == HIGH) {
